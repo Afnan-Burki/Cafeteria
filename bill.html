@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your existing CSS -->
+</head>
+<body>
+    <div id="bill"></div>
+    <h2>Reviews</h2>
+    <div id="reviews"></div>
+    <button id="print-bill">Print Bill</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const billData = JSON.parse(localStorage.getItem('billData'));
+            const reviewsData = JSON.parse(localStorage.getItem('reviewsData'));
+            const billDiv = document.getElementById('bill');
+            const reviewsDiv = document.getElementById('reviews');
+
+            // Display bill data
+            if (billData) {
+                let billContent = '<h2>Your Bill</h2><ul>';
+                billData.forEach(item => {
+                    billContent += `<li>${item.item} - PKR ${item.price.toFixed(2)}</li>`;
+                });
+                billContent += '</ul>';
+                billDiv.innerHTML = billContent;
+            }
+
+            // Display reviews
+            if (reviewsData) {
+                reviewsData.forEach(review => {
+                    const reviewDiv = document.createElement('div');
+                    reviewDiv.textContent = review;
+                    reviewsDiv.appendChild(reviewDiv);
+                });
+            }
+
+            // Print bill functionality
+            document.getElementById('print-bill').addEventListener('click', function() {
+                window.print();
+            });
+        });
+    </script>
+</body>
+<br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+        <p>&copy; 2024 PAF College Lower Topa. All Rights Reserved.</p>
+    </footer>
+</html>

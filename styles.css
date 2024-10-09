@@ -1,0 +1,635 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3399ff; /* Slightly darker sky blue color */
+}
+header {
+    background: #3399ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #007acc;
+    padding: 10px;
+    z-index: 1000;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.category {
+    margin: 20px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+button.add-to-cart {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.add-to-cart:hover {
+    background-color: #005999;
+}
+
+#complaint-message, #order-message {
+    margin-top: 10px;
+}
+
+#your-total {
+    font-weight: bold;
+}
+
+#order-message {
+    margin-top: 15px;
+    padding: 10px;
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #007acc;
+    color: white;
+}
+
+select, input[type="text"], textarea {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#house-selection {
+    height: 40px;
+}
+
+#order-message.success {
+    color: green;
+}
+
+#order-message.failure {
+    color: red;
+}
+.review-item {
+    background-color: #e9f7ef; /* Light green background */
+    border: 1px solid #28a745; /* Green border */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.clear-reviews {
+    background-color: #dc3545; /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.clear-reviews:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 600px; /* Increased size */
+    width: 90%; /* Responsive */
+}
+
+.close-button {
+    cursor: pointer;
+    font-size: 25px;
+    color: #007acc; /* Change color */
+    float: right;
+}
+/* Modal Background */
+#welcome-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #007acc;
+    border-radius: 10px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s;
+}
+
+/* Header */
+.modal-header {
+    background-color: #007acc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Welcome Button */
+.welcome-button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.welcome-button:hover {
+    background-color: #005999;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.close-button {
+    cursor: pointer;
+    font-size: 20px;
+    float: right;
+}
+
+h2 {
+    margin: 0;
+}
+
+button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #005999;
+}
+.close-button:hover {
+    color: #005999; /* Darker shade on hover */
+}
+
+h2 {
+    margin: 0 0 15px 0;
+    font-size: 2em; /* Larger heading */
+    color: #007acc; /* Change color */
+}
+
+p {
+    font-size: 1.2em; /* Slightly larger text */
+    color: #333; /* Darker text for contrast */
+}
+
+button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1em; /* Larger button text */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #005999;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+/* Modal Background */
+#welcome-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background: url(cafe.png) no-repeat center center; /* Background image */
+    background-size: cover; /* Cover the entire modal */
+    opacity: 0.9; /* Slightly transparent */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #007acc;
+    border-radius: 10px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s;
+}
+
+/* Header, Close Button, and Other Styles remain the same */
+/* Modal Background */
+#welcome-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+}
+
+/* Modal Content */
+.modal-content {
+    background: rgba(255, 255, 255, 0.9); /* White with transparency */
+    margin: 15% auto; /* Centered */
+    padding: 40px;
+    border-radius: 15px;
+    width: 80%; /* Responsive width */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.5s; /* Fade in animation */
+}
+
+/* Heading */
+.modal-content h2 {
+    color: #007acc; /* Title color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Welcome Message */
+.modal-content p {
+    color: #333; /* Text color */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.modal-content button {
+    background-color: #007acc; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #005999; /* Darker shade on hover */
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Dropdown Menu */
+nav ul li .dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background: #3399ff; /* Set background color */
+    border: 1px solid #007acc;
+    z-index: 1000;
+    min-width: 150px; /* Set a minimum width */
+    opacity: 0; /* Start hidden */
+    transform: translateY(-10px); /* Slightly move it up */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    top: 100%; /* Position directly below the menu item */
+    left: 0; /* Align it to the left */
+}
+
+/* Show dropdown on hover */
+nav ul li:hover .dropdown {
+    display: block; /* Make it block for visibility */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move into place */
+}
+
+/* Dropdown Items */
+nav ul li .dropdown li {
+    display: block; /* Change to block for vertical alignment */
+    margin: 5px 0; /* Space between items */
+}
+
+/* Dropdown Links */
+nav ul li .dropdown li a {
+    color: white; /* Change link color to white */
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block; /* Make links fill the full area */
+}
+
+/* Hover effect for dropdown links */
+nav ul li .dropdown li a:hover {
+    background-color: #007acc; /* Background on hover */
+}
+
+
+#new-order {
+    background-color: #28a745; /* Green  background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#new-order:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+/* Change the color of the specific link */
+a {
+    color: inherit; /* This will inherit the color from the parent element */
+    text-decoration: none; /* Optional: removes the underline */
+}
+
+a[href="http://www.topians.edu.pk"] {
+    color: #09735e; /* Change this to your desired color (e.g., dark gray) */
+}
+
+a[href="http://www.topians.edu.pk"]:hover {
+    color: #5dbaa8; /* Change this to your desired hover color */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item {
+    /* Add existing styles */
+    transition: transform 0.3s ease;
+}
+
+/* Adding this class when an item is added */
+.item.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+header h1 {
+    position: relative; /* Enable positioning for the underline */
+    margin: 20px 0; /* Adjust spacing */
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.header-link::after {
+    content: "";
+    display: block;
+    width: 100%; /* Full width of the link */
+    height: 3px; /* Thickness of the line */
+    background-color: #007acc; /* Color of the underline */
+    position: absolute; /* Positioning */
+    bottom: -5px; /* Adjust position as needed */
+    left: 0;
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease; /* Smooth transition for expand */
+}
+
+.header-link:hover::after {
+    transform: scaleX(1); /* Expand when hovered */
+}
+
+.header-link:not(:hover)::after {
+    transform: scaleX(0); /* Collapse when not hovered */
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; /* Start at the top */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: transform 0.5s ease; /* Smooth transition for transform */
+    transform: translateY(0); /* Start in place */
+}
+
+.modal.slide-up {
+    transform: translateY(-100%); /* Slide up out of view */
+}
+
+.modal.slide-down {
+    transform: translateY(100%); /* Slide down out of view */
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+header nav ul li .header-link {
+    color: white; /* Default color */
+    position: relative; /* Required for the underline */
+}
+
+header nav ul li .header-link:hover {
+    color: #007acc; /* Color on hover */
+}
+
+header nav ul li .header-link::after {
+    content: ""; 
+    display: block;
+    width: 100%;
+    height: 3px; 
+    background-color: transparent; /* Default to transparent */
+    position: absolute; 
+    bottom: -5px; 
+    left: 0;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+header nav ul li .header-link:hover::after {
+    background-color: #007acc; /* Match hover color */
+    transform: scaleX(1); 
+}
+header h1 {
+    font-family: 'Playfair Display', serif;
+    color: white; /* Adjust color as needed */
+    font-size: 2.5em; /* Adjust size as needed */
+}
+
+header h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: white; /* Adjust color as needed */
+    font-size: 1.5em; /* Adjust size as needed */
+}
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+nav ul li {
+    display: inline; /* Align items horizontally */
+    margin-left: 20px; /* Space between links */
+}
+
+.header-link {
+    text-decoration: none; /* Remove underline */
+    color: #3399ff; /* Match your site's color */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.header-link:hover {
+    color: #ff9900; /* Change color on hover */
+}
+.scroll-button {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 25px; /* Position it 1/4 from the right */
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    background-color: white; /* White background */
+    border: 2px solid blue; /* Blue border for visibility */
+    border-radius: 50%; /* Rounded shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s; /* Fade in/out effect */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.scroll-button:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

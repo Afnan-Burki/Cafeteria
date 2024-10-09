@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAF College Lower Topa Cafeteria</title>
+    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+ <div id="welcome-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Welcome to PAF College Cafeteria!</h2>
+        <p>Enjoy our delicious menu items and great service.</p>
+        <button id="continue-button">Continue to Menu</button>
+    </div>
+</div>
+<header>
+    <img src="pclt.png" style="height: 198px; float: left; margin-right: 70px;">
+    <h1><a href="#home" class="header1">PAF College Lower Topa</a></h1>
+    <h1><a href="#cafeteria" class="header1">College Cafeteria</a></h1>
+    <nav>
+        <ul>
+            <li><a href="#menu" class="header-link">Menu</a>
+                <ul class="dropdown">
+                    <li><a href="#drinks">Drinks</a></li>
+                    <li><a href="#bakery">Bakery Items</a></li>
+                    <li><a href="#fast-food">Fast Foods</a></li>
+                    <li><a href="#fruits">Fruits</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                </ul>
+            </li>
+            <li><a href="#Cart" class="header-link">Your Cart 🛒 (<span id="cart-count">0</span>)</a></li>
+            <li><a href="#reviews" class="header-link">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <main>
+        <section id="menu">
+            <h2>Menu</h2>
+            <div class="category" id="drinks">
+                <h3>Drinks</h3>
+                <div class="item" data-name="Peach Malt" data-price="100">
+                    <h4>Peach Malt</h4>
+                    <p>PKR 100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Mango Shake" data-price="150">
+                    <h4>Mango Shake</h4>
+                    <p>PKR 150</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Banana Shake" data-price="120">
+                    <h4>Banana Shake</h4>
+                    <p>PKR 120</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Oreo Shake" data-price="120">
+                    <h4>Oreo Shake</h4>
+                    <p>PKR 120</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Apple Shake" data-price="150">
+                    <h4>Apple Shake</h4>
+                    <p>PKR 150</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="TOPS Mango Juice" data-price="60">
+                    <h4>TOPS Mango Juice</h4>
+                    <p>PKR 60</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="TOPS Apple Juice" data-price="60">
+                    <h4>TOPS Apple Juice</h4>
+                    <p>PKR 60</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="category" id="bakery">
+                <h3>Bakery Items</h3>
+                <div class="item" data-name="Samosa" data-price="40">
+                    <h4>Samosa</h4>
+                    <p>PKR 40</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Bread" data-price="80">
+                    <h4>Bread</h4>
+                    <p>PKR 80</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Bun" data-price="50">
+                    <h4>Bun</h4>
+                    <p>PKR 50</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Cream Roll" data-price="70">
+                    <h4>Cream Roll</h4>
+                    <p>PKR 70</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Brownie" data-price="70">
+                    <h4>Brownie</h4>
+                    <p>PKR 70</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+<button id="scroll-to-top" class="scroll-button" style="display: none;">
+    <i class="fas fa-arrow-up" style="color: blue;"></i>
+</button>
+            </div>
+            <div class="category" id="fast-food">
+                <h3>Fast Foods</h3>
+                <div class="item" data-name="Fries" data-price="100">
+                    <h4>Fries</h4>
+                    <p>PKR 100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Burger" data-price="110">
+                    <h4>Burger</h4>
+                    <p>PKR 110</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Shawarma" data-price="100">
+                    <h4>Shawarma</h4>
+                    <p>PKR 100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Pizza" data-price="300">
+                    <h4>Pizza</h4>
+                    <p>PKR 300</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Paratha Roll" data-price="150">
+                    <h4>Paratha Roll</h4>
+                    <p>PKR 150</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Veg Roll" data-price="50">
+                    <h4>Veg Roll</h4>
+                    <p>PKR 50</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="category" id="fruits">
+                <h3>Fruits</h3>
+                <div class="item" data-name="Apples" data-price="100">
+                    <h4>Apples</h4>
+                    <p>PKR 100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Mangoes" data-price="100">
+                    <h4>Mangoes</h4>
+                    <p>PKR 100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Grapes" data-price="100">
+                    <h4>Grapes</h4>
+                    <p>PKR 100</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="category" id="desserts">
+                <h3>Desserts</h3>
+                <div class="item" data-name="Fruit Chat" data-price="150">
+                    <h4>Fruit Chat</h4>
+                    <p>PKR 150</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="item" data-name="Ice Cream" data-price="80">
+                    <h4>Ice Cream</h4>
+                    <p>PKR 80</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cart-count" id="Cart">
+            <h2>Your Cart 🛒</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total: PKR 0.00</p>
+            <h3>Order Details</h3>
+            <select id="house-selection" required>
+                    <option value="" disabled selected>Select Your House</option>
+                    <option value="Aurangzeb">Aurangzeb</option>
+                    <option value="Babur">Babur</option>
+                    <option value="Iqbal">Iqbal</option>
+                    <option value="Siraj">Siraj</option>
+                    <option value="Sir Syed">Sir Syed</option>
+                    <option value="Tipu">Tipu</option>
+                </select>
+                <select id="location" required>
+    <option value="" disabled selected>Select Location</option>
+                    <option value="Dorm 1">Dorm 1</option>
+                    <option value="Dorm 2">Dorm 2</option>
+                    <option value="Dorm 3">Dorm 3</option>
+                    <option value="Dorm 4">Dorm 4</option>
+                    <option value="Dorm 5">Dorm 5</option>
+                    <option value="House Captain Dorm">House Captain Dorm</option>
+                    <option value="College Prefect">College Prefect</option>
+                    <option value="House Prefect 1">House Prefect 1</option>
+                    <option value="House Prefect 2">House Prefect 2</option>
+                    <option value="Ante Room">Ante Room</option>
+                </select>
+                <input type="number" id="college-number" placeholder="College Number (2031 - 2324)" min="2031" max="2324" required>
+<button id="checkout">Checkout</button>
+<div id="bill" style="display:none;"></div>
+
+                <button type="submit">Place Order</button>
+            </form>
+            <div id="order-message"></div>
+        </section>
+  <button id="new-order" style="margin-top: 10px;">New Order</button>
+       <section id="reviews">
+    <h2>Submit a Review</h2>
+    <form id="review-form">
+        <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+    <div id="review-message"></div>
+         <button id="clear-reviews">Clear Reviews</button>
+   </section>
+  <p> Thank you for your kind visit. Enjoy your meal!!!</p>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+
+
+  </main>
+
+<footer>
+        <p>&copy; 2024 PAF College Lower Topa. All Rights Reserved.</p>
+    </footer>
+ <script src="script.js"></script>
+</body>
+</html>
